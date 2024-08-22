@@ -4,11 +4,12 @@ import multipartPlugin from '@fastify/multipart'
 
 export async function startServer() {
   const server = fastify({
-    logger: true
+    logger: true,
+    
   })
   
   server
-  // .register(multipartPlugin)
+  .register(multipartPlugin)
   .register(require('./routes'))
 
   try {
